@@ -64,7 +64,7 @@ def display_visualisation():
         df = merged_df[merged_df["Disaster_Type"] == choice]
         disaster_col = "Count" if "Count" in df.columns else df.columns[2]
 
-    fig, ax1 = plt.subplots(figsize=(12, 6))
+    _, ax1 = plt.subplots(figsize=(12, 6))
     ax1.plot(df["Year"], df[climate_col], color="red", label="Global Temperature")
     ax1.set_ylabel("Temperature (°C)", color="red")
     ax1.tick_params(axis="y", labelcolor="red")
@@ -101,7 +101,7 @@ def compare_disasters():
     col1 = "Count" if "Count" in df1.columns else df1.columns[1]
     col2 = "Count" if "Count" in df2.columns else df2.columns[1]
 
-    fig, ax = plt.subplots(figsize=(12, 6))
+    _, ax = plt.subplots(figsize=(12, 6))
     ax.plot(df1.index, df1[col1], label=d1, color="blue")
     ax.plot(df2.index, df2[col2], label=d2, color="green")
 
